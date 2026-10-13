@@ -58,7 +58,12 @@
                 </div>
                 <div class="col-md-6 mb-3">
                     <label for="no_hp" class="form-label">No. HP / WhatsApp</label>
-                    <input type="text" name="no_hp" class="form-control @error('no_hp') is-invalid @enderror" value="{{ old('no_hp', $peserta->no_hp) }}">
+                    <input type="text" name="no_hp"
+                        class="form-control @error('no_hp') is-invalid @enderror"
+                        value="{{ old('no_hp', $peserta->no_hp) }}"
+                        maxlength="12"
+                        inputmode="numeric"
+                        oninput="this.value = this.value.replace(/[^0-9]/g, '')">
                     @error('no_hp')
                         <div class="invalid-feedback">{{ $message }}</div>
                     @enderror
