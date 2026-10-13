@@ -5,7 +5,7 @@
 @section('content')
 <div class="d-flex justify-content-between align-items-center mb-4">
     <h3 class="fw-bold mb-0">Data Peserta Sertifikasi</h3>
-    <a href="{{ route('peserta.create') }}" class="btn btn-primary">
+    <a href="{{ route('peserta.create') }}" class="btn btn-info">
         <i class="fa-solid fa-user-plus me-1"></i> Tambah Peserta
     </a>
 </div>
@@ -18,7 +18,7 @@
                 <input type="text" name="search" class="form-control" placeholder="Cari berdasarkan Kode, Nama, atau No HP..." value="{{ $search }}">
             </div>
             <div class="col-md-2 d-flex gap-2">
-                <button type="submit" class="btn btn-secondary w-100"><i class="fa-solid fa-magnifying-glass"></i> Cari</button>
+                <button type="submit" class="btn btn-success w-100"><i class="fa-solid fa-magnifying-glass"></i> Cari</button>
                 @if($search)
                     <a href="{{ route('peserta.index') }}" class="btn btn-outline-secondary"><i class="fa-solid fa-xmark"></i></a>
                 @endif
@@ -52,7 +52,7 @@
                             <td><span class="badge bg-info text-dark">{{ $item->skema->nm_skema ?? '-' }}</span></td>
                             <td>{{ $item->no_hp }}</td>
                             <td class="text-center">
-                                <a href="{{ route('peserta.show', $item->id) }}" class="btn btn-info btn-sm text-white" title="Detail">
+                                <a href="{{ route('peserta.show', $item->id) }}" class="btn btn-primary btn-sm text-white" title="Detail">
                                     <i class="fa-solid fa-eye"></i>
                                 </a>
                                 <a href="{{ route('peserta.edit', $item->id) }}" class="btn btn-warning btn-sm text-white" title="Edit">

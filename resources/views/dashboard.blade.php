@@ -11,7 +11,7 @@
 <div class="row">
     <!-- Card Total Skema -->
     <div class="col-md-6 mb-3">
-        <div class="card border-0 shadow-sm bg-primary text-white p-3">
+        <div class="card border-0 shadow-sm bg-warning text-white p-3">
             <div class="d-flex justify-content-between align-items-center">
                 <div>
                     <h6 class="text-uppercase mb-1">Total Skema Sertifikasi</h6>
@@ -26,7 +26,7 @@
 
     <!-- Card Total Peserta -->
     <div class="col-md-6 mb-3">
-        <div class="card border-0 shadow-sm bg-success text-white p-3">
+        <div class="card border-0 shadow-sm bg-primary text-white p-3">
             <div class="d-flex justify-content-between align-items-center">
                 <div>
                     <h6 class="text-uppercase mb-1">Total Peserta Terdaftar</h6>

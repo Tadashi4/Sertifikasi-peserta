@@ -34,7 +34,7 @@ class AuthController extends Controller
 
         // Jika Gagal
         return back()->withErrors([
-            'email' => 'Email atau password salah.',
+            'email' => 'Email atau password anda salah.',
         ])->onlyInput('email');
     }
 
@@ -45,6 +45,6 @@ class AuthController extends Controller
         $request->session()->invalidate();
         $request->session()->regenerateToken();
 
-        return redirect('/login')->with('success', 'Berhasil logout!');
+        return redirect()->route('welcome')->with('success', 'Berhasil logout!');
     }
 }

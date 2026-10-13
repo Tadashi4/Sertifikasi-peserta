@@ -5,7 +5,7 @@
 @section('content')
 <div class="d-flex justify-content-between align-items-center mb-4">
     <h3 class="fw-bold mb-0">Data Skema Sertifikasi</h3>
-    <a href="{{ route('skema.create') }}" class="btn btn-primary">
+    <a href="{{ route('skema.create') }}" class="btn btn-info">
         <i class="fa-solid fa-plus me-1"></i> Tambah Skema
     </a>
 </div>
@@ -21,7 +21,7 @@
                         <th>Nama Skema</th>
                         <th>Jenis</th>
                         <th>Jumlah Unit</th>
-                        <th width="150" class="text-center">Aksi</th>
+                        <th width="180" class="text-center">Aksi</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -33,6 +33,9 @@
                             <td>{{ $item->jenis }}</td>
                             <td>{{ $item->jml_unit }} Unit</td>
                             <td class="text-center">
+                                <a href="{{ route('skema.show', $item->id) }}" class="btn btn-primary btn-sm text-white">
+                                    <i class="fa-solid fa-eye"></i>
+                                </a>
                                 <a href="{{ route('skema.edit', $item->id) }}" class="btn btn-warning btn-sm text-white">
                                     <i class="fa-solid fa-pen-to-square"></i>
                                 </a>

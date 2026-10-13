@@ -50,7 +50,7 @@
 
             <div class="d-flex gap-2 pt-2">
                 <button type="submit" class="btn btn-primary">Simpan</button>
-                <a href="{{ route('skema.index') }}" class="btn btn-secondary">Batal</a>
+                <a href="{{ route('skema.index') }}" class="btn btn-danger">Batal</a>
             </div>
         </form>
     </div>

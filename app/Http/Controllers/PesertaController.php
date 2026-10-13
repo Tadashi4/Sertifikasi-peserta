@@ -42,7 +42,7 @@ class PesertaController extends Controller
             'nm_peserta' => 'required',
             'jk'         => 'required|in:L,P',
             'alamat'     => 'required',
-            'no_hp'      => 'required|numeric',
+            'no_hp'      => 'required|digits_between:10,12',
         ], [
             'id_skema.required'   => 'Skema Sertifikasi wajib dipilih!',
             'kd_peserta.required' => 'Kode Peserta wajib diisi!',
@@ -51,7 +51,7 @@ class PesertaController extends Controller
             'jk.required'         => 'Jenis Kelamin wajib dipilih!',
             'alamat.required'     => 'Alamat wajib diisi!',
             'no_hp.required'      => 'Nomor HP wajib diisi!',
-            'no_hp.numeric'       => 'Nomor HP harus berupa angka!',
+            'no_hp.digits_between' => 'Nomor HP harus berupa angka, 10 sampai 12 digit!',
         ]);
 
         Peserta::create($request->all());

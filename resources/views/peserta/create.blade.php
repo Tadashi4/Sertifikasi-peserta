@@ -57,7 +57,7 @@
                 </div>
                 <div class="col-md-6 mb-3">
                     <label for="no_hp" class="form-label">No. HP / WhatsApp</label>
-                    <input type="text" name="no_hp" class="form-control @error('no_hp') is-invalid @enderror" value="{{ old('no_hp') }}" placeholder="08123456789">
+                    <input type="text" name="no_hp" class="form-control @error('no_hp') is-invalid @enderror" value="{{ old('no_hp') }}" placeholder="08123456789" maxlength="12" inputmode="numeric" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
                     @error('no_hp')
                         <div class="invalid-feedback">{{ $message }}</div>
                     @enderror
@@ -74,7 +74,7 @@
 
             <div class="d-flex gap-2 pt-2">
                 <button type="submit" class="btn btn-primary">Simpan Peserta</button>
-                <a href="{{ route('peserta.index') }}" class="btn btn-secondary">Batal</a>
+                <a href="{{ route('peserta.index') }}" class="btn btn-danger">Batal</a>
             </div>
         </form>
     </div>

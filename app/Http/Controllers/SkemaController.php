@@ -41,6 +41,13 @@ class SkemaController extends Controller
         return redirect()->route('skema.index')->with('success', 'Data Skema berhasil ditambahkan!');
     }
 
+    // Detail Skema
+    public function show(Skema $skema)
+    {
+        $skema->load('peserta');
+        return view('skema.show', compact('skema'));
+    }
+
     // 4. Form Edit Skema
     public function edit(Skema $skema)
     {
