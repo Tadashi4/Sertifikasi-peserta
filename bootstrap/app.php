@@ -12,7 +12,15 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware): void {
-        //
+        $middleware->alias([
+            'admin' => \App\Http\Middleware\AdminOnly::class,
+        ]);
+
+        $middleware->redirectGuestsTo(function (Request $request) {
+            $halamanAdmin = $request->is('dashboard') || $request->is('skema*') || $request->is('peserta*');
+
+            return $halamanAdmin ? route('admin.login') : route('login');
+        });
     })
     ->withExceptions(function (Exceptions $exceptions): void {
         $exceptions->shouldRenderJsonWhen(

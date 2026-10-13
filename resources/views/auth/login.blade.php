@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Administrator - Sertifikasi JWD</title>
+    <title>Login - Sertifikasi JWD</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
@@ -22,8 +22,8 @@
 <div class="container">
     <div class="card login-card p-4">
         <div class="text-center mb-4">
-            <h4 class="fw-bold">LOGIN ADMIN</h4>
-            <p class="text-muted small">Sistem Sertifikasi Peserta</p>
+            <h4 class="fw-bold">LOGIN</h4>
+            <p class="text-muted small">Masuk ke Sistem Sertifikasi Peserta</p>
         </div>
 
         @if(session('success'))
@@ -53,6 +53,12 @@
 
             <button type="submit" class="btn btn-primary w-100 py-2 mt-2 fw-semibold">Masuk</button>
         </form>
+        <p class="text-center small mt-3 mb-1">
+            Belum punya akun? <a href="{{ route('register') }}">Daftar di sini ya</a>
+        </p>
+        <p class="text-center small mb-0">
+            <a href="{{ route('admin.login') }}" class="text-muted">Login sebagai Admin</a>
+        </p>
     </div>
 </div>
 

@@ -19,10 +19,11 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         // untuk data admin untuk login
-        User::create([
+        User::forceCreate([
             'name' => 'Administrator',
             'email' => 'admin@gmail.com',
             'password' => Hash::make('admin123'),
+            'role' => 'admin'
         ]);
 
         // 2. Data Dummy Skema

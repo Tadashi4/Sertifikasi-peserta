@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Selamat Datang - Sertifikasi JWD</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         body {
             background-color: #f4f6f9;
@@ -15,10 +14,6 @@
             margin: 100px auto;
             border-radius: 10px;
             box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-        }
-        .welcome-icon {
-            font-size: 3rem;
-            color: #0d6efd;
         }
     </style>
 </head>
@@ -35,16 +30,13 @@
             Kelola data skema dan peserta sertifikasi dengan mudah dalam satu tempat.
         </p>
 
-        @auth
-            <a href="{{ route('dashboard') }}" class="btn btn-primary w-100 py-2 fw-semibold">
-                <i class="fa-solid fa-gauge me-1"></i> Ke Dashboard
-            </a>
-        @else
-            <a href="{{ route('login') }}" class="btn btn-primary w-100 py-2 fw-semibold">
-                <i class="fa-solid fa-right-to-bracket me-1"></i> Masuk sebagai Admin
-            </a>
-        @endauth
-
+        <a href="{{ route('login') }}" class="btn btn-primary w-100 py-2 fw-semibold mb-2">
+            Masuk
+        </a>
+        <a href="{{ route('register') }}" class="btn btn-outline-primary w-100 py-2 fw-semibold">
+            Daftar Akun
+        </a>
+        <a href="{{ route('admin.login') }}" class="small text-muted d-block mt-3">Login sebagai Admin</a>
         <small class="text-muted mt-4 d-block">&copy; {{ date('Y') }} Sistem Sertifikasi Peserta</small>
     </div>
 </div>

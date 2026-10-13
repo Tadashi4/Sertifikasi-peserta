@@ -12,7 +12,7 @@ class Skema extends Model
     // Kolom yang dapat diisi secara massal
     protected $guarded = ['id'];
 
-    // Relasi One-to-Many: Satu skema memiliki banyak peserta
+    
     public function peserta()
     {
         return $this->hasMany(Peserta::class, 'id_skema');
